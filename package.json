@@ -1,0 +1,89 @@
+{
+  "name": "better-auth-trustware",
+  "version": "0.1.0",
+  "description": "Better Auth plugin for crypto payments, subscriptions, invoices and access control, settled through Trustware.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "better-auth",
+    "better-auth-plugin",
+    "trustware",
+    "payments",
+    "crypto",
+    "subscriptions",
+    "billing",
+    "access-control",
+    "typescript"
+  ],
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "default": "./dist/client.js"
+    },
+    "./testing": {
+      "types": "./dist/testing.d.ts",
+      "default": "./dist/testing.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/index.d.ts"
+      ],
+      "client": [
+        "./dist/client.d.ts"
+      ],
+      "testing": [
+        "./dist/testing.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint:package": "publint run --strict",
+    "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build",
+    "live-check": "node scripts/live-check.mjs"
+  },
+  "dependencies": {
+    "zod": "^4.5.4"
+  },
+  "peerDependencies": {
+    "@better-auth/core": "^1.7.12",
+    "better-auth": "^1.7.12",
+    "better-call": "1.4.4"
+  },
+  "devDependencies": {
+    "@better-auth/core": "1.7.12",
+    "@types/node": "^22.0.0",
+    "better-auth": "1.7.12",
+    "better-call": "1.4.4",
+    "publint": "^0.3.0",
+    "tsdown": "0.21.10",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@12.3.4"
+}
