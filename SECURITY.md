@@ -4,7 +4,7 @@ This plugin decides when a payment counts as paid and who has access, so securit
 
 ## Reporting
 
-Please **do not open a public issue** for a vulnerability. Report it privately through the repository's "Report a vulnerability" (GitHub private security advisory) option, or contact the maintainers directly. Include:
+Please **do not open a public issue** for a vulnerability. Report it privately through the repository's "Report a vulnerability" (GitHub private security advisory) option, or email Daniel Merja at danielmerja@gmail.com. Include:
 
 - what you found and the impact (for example: credit without payment, access without payment, cross-account data exposure),
 - steps or a failing test to reproduce,

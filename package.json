@@ -4,6 +4,15 @@
   "description": "Better Auth plugin for crypto payments, subscriptions, invoices and access control, settled through Trustware.",
   "type": "module",
   "license": "MIT",
+  "author": "Daniel Merja <danielmerja@gmail.com> (https://github.com/danielmerja)",
+  "homepage": "https://github.com/danielmerja/better-auth-trustware#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmerja/better-auth-trustware.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danielmerja/better-auth-trustware/issues"
+  },
   "keywords": [
     "better-auth",
     "better-auth-plugin",

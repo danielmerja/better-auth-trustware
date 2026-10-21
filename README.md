@@ -397,6 +397,10 @@ Then make one small real payment end to end.
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) and [docs/DESIGN.md](./docs/DESIGN.md). Security issues: [SECURITY.md](./SECURITY.md).
 
+## Author
+
+Created and maintained by [Daniel Merja](https://github.com/danielmerja).
+
 ## License
 
 MIT
