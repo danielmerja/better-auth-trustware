@@ -89,7 +89,6 @@ export interface TrustwareSubscription {
   endedReason?: string | null;
   pendingPlan?: string | null;
   pendingInterval?: BillingInterval | null;
-  seats?: number | null;
   createdAt: Date;
   updatedAt: Date;
 }

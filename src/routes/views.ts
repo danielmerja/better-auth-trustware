@@ -100,7 +100,6 @@ export function subscriptionView(billing: Billing, sub: TrustwareSubscription, p
     endedReason: sub.endedReason ?? null,
     pendingPlan: sub.pendingPlan ?? null,
     pendingInterval: sub.pendingInterval ?? null,
-    seats: sub.seats ?? null,
     graceEndsAt: resolved.graceEndsAt,
     limits: plan?.limits ?? {},
     features: plan?.features ?? [],

@@ -21,7 +21,6 @@ export const TRUSTWARE_SCHEMA = {
       endedReason: { type: "string", required: false },
       pendingPlan: { type: "string", required: false },
       pendingInterval: { type: "string", required: false },
-      seats: { type: "number", required: false },
       createdAt: { type: "date", required: true, defaultValue: now },
       updatedAt: { type: "date", required: true, defaultValue: now, onUpdate: now },
     },

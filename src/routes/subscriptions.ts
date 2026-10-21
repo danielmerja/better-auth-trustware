@@ -31,7 +31,6 @@ export const checkout = (billing: Billing) => {
           plan: z.string().optional(),
           interval: intervalSchema.optional(),
           productId: z.string().optional(),
-          seats: z.number().int().positive().optional(),
           metadata: z.record(z.string(), z.any()).optional(),
           ...referenceFields,
         })
@@ -59,7 +58,6 @@ export const checkout = (billing: Billing) => {
           customerType,
           plan,
           interval: ctx.body.interval,
-          seats: ctx.body.seats,
         });
         const invoice = result.invoice ? invoiceView(billing, result.invoice) : null;
         return ctx.json({

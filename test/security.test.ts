@@ -225,8 +225,15 @@ describe("the customer can't make themselves paid", () => {
 
   it("ignores client-supplied amounts, destinations and statuses", async () => {
     const t = await setup();
-    const res = await t.auth.api.trustwareCheckout({ headers: t.headers, body: { plan: "pro", priceCents: 1, amountCents: 1 } as any });
+    const res = await t.auth.api.trustwareCheckout({
+      headers: t.headers,
+      body: { plan: "pro", priceCents: 1, amountCents: 1, seats: 500 } as any,
+    });
     expect(res.invoice?.amountCents).toBe(2000);
+    // Seats are not priced, so a client-supplied count must never end up on the billing record.
+    expect(res.subscription).not.toHaveProperty("seats");
+    const [stored] = await t.db.findMany<Record<string, unknown>>({ model: "trustwareSubscription" });
+    expect(stored).not.toHaveProperty("seats");
     const prepared = await t.auth.api.trustwarePayInvoice({
       headers: t.headers,
       body: { ...payBody(res.invoice!.id), status: "success", creditedUnits: "99999999", toAddress: "0xevil" } as any,

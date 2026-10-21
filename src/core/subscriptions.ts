@@ -46,7 +46,6 @@ export async function startSubscription(
     customerType: CustomerType;
     plan: TrustwarePlan;
     interval?: BillingInterval;
-    seats?: number;
   },
 ): Promise<CheckoutResult> {
   const { referenceId, customerType, plan } = args;
@@ -74,7 +73,6 @@ export async function startSubscription(
     plan: plan.name,
     billingInterval: interval,
     cancelAtPeriodEnd: false,
-    seats: args.seats ?? null,
   };
 
   if (trialEligible) {
